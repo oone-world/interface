@@ -1,4 +1,4 @@
-import { ChainId, SUPPORTED_CHAINS, SupportedChainsType } from '@uniswap/sdk-core'
+import { ChainId, SUPPORTED_CHAINS, SupportedChainsType } from 'constants/oone'
 
 export const UniWalletSupportedChains = [
   ChainId.MAINNET,
@@ -23,6 +23,7 @@ export const CHAIN_IDS_TO_NAMES = {
   [ChainId.BNB]: 'bnb',
   [ChainId.AVALANCHE]: 'avalanche',
   [ChainId.BASE]: 'base',
+  [ChainId.OONE_DEV]: 'oone_dev',
 } as const
 
 // Include ChainIds in this array if they are not supported by the UX yet, but are already in the SDK.

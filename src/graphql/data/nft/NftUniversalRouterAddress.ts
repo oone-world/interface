@@ -1,6 +1,6 @@
 import { ChainId } from '@uniswap/sdk-core'
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk'
 import { isSupportedChain } from 'constants/chains'
+import { UNIVERSAL_ROUTER_ADDRESS } from 'constants/oone'
 import gql from 'graphql-tag'
 
 import { useNftUniversalRouterAddressQuery } from '../__generated__/types-and-hooks'

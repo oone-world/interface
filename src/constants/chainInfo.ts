@@ -1,4 +1,3 @@
-import { ChainId } from '@uniswap/sdk-core'
 import bnbCircleLogoUrl from 'assets/images/bnbCircle.svg'
 import ethereumLogoUrl from 'assets/images/ethereum-logo.png'
 import polygonCircleLogoUrl from 'assets/images/polygonCircle.png'
@@ -20,6 +19,7 @@ import { darkTheme } from 'theme/colors'
 
 import { SupportedL1ChainId, SupportedL2ChainId } from './chains'
 import { ARBITRUM_LIST, AVALANCHE_LIST, BASE_LIST, CELO_LIST, OPTIMISM_LIST, PLASMA_BNB_LIST } from './lists'
+import { ChainId } from './oone'
 
 export const AVERAGE_L1_BLOCK_TIME = ms(`12s`)
 

@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from 'constants/oone'
 
 const INFURA_KEY = process.env.REACT_APP_INFURA_KEY
 if (typeof INFURA_KEY === 'undefined') {
@@ -115,6 +115,7 @@ export const FALLBACK_URLS = {
     'https://1rpc.io/base',
     'https://base.meowrpc.com',
   ],
+  [ChainId.OONE_DEV]: ['https://rpc.dev.oonechain.com/'],
 }
 
 /**
@@ -148,4 +149,5 @@ export const RPC_URLS = {
   [ChainId.BNB]: [QUICKNODE_BNB_RPC_URL, ...FALLBACK_URLS[ChainId.BNB]],
   [ChainId.AVALANCHE]: [`https://avalanche-mainnet.infura.io/v3/${INFURA_KEY}`, ...FALLBACK_URLS[ChainId.AVALANCHE]],
   [ChainId.BASE]: [`https://base-mainnet.infura.io/v3/${INFURA_KEY}`, ...FALLBACK_URLS[ChainId.BASE]],
+  [ChainId.OONE_DEV]: ['https://rpc.dev.oonechain.com/', ...FALLBACK_URLS[ChainId.OONE_DEV]],
 }

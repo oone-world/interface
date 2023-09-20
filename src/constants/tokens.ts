@@ -1,5 +1,7 @@
-import { ChainId, Currency, Ether, NativeCurrency, Token, UNI_ADDRESSES, WETH9 } from '@uniswap/sdk-core'
+import { Currency, Ether, NativeCurrency, Token, UNI_ADDRESSES, WETH9 } from '@uniswap/sdk-core'
 import invariant from 'tiny-invariant'
+
+import { ChainId } from './oone'
 
 export const NATIVE_CHAIN_ID = 'NATIVE'
 
@@ -333,6 +335,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     18,
     'WAVAX',
     'Wrapped AVAX'
+  ),
+  [ChainId.OONE_DEV]: new Token(
+    ChainId.OONE_DEV,
+    '0x5bD49815DEEEEe2EaE34467fF6AbFcF201570628',
+    18,
+    'WOONE',
+    'Wrapped OONE'
   ),
 }
 

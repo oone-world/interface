@@ -1,5 +1,4 @@
 import { t } from '@lingui/macro'
-import { ChainId } from '@uniswap/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import { showTestnetsAtom } from 'components/AccountDrawer/TestnetsToggle'
 import { MouseoverTooltip } from 'components/Tooltip'
@@ -14,6 +13,7 @@ import {
   TESTNET_CHAIN_IDS,
   UniWalletSupportedChains,
 } from 'constants/chains'
+import { ChainId } from 'constants/oone'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import useSelectChain from 'hooks/useSelectChain'
 import useSyncChainQuery from 'hooks/useSyncChainQuery'

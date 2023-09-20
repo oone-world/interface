@@ -3,11 +3,11 @@ import { deepCopy } from '@ethersproject/properties'
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { StaticJsonRpcProvider } from '@ethersproject/providers'
 import { isPlain } from '@reduxjs/toolkit'
-import { ChainId } from '@uniswap/sdk-core'
 
 import { AVERAGE_L1_BLOCK_TIME } from './chainInfo'
 import { CHAIN_IDS_TO_NAMES, SupportedInterfaceChain } from './chains'
 import { RPC_URLS } from './networks'
+import { ChainId } from './oone'
 
 class AppJsonRpcProvider extends StaticJsonRpcProvider {
   private _blockCache = new Map<string, Promise<any>>()
@@ -72,4 +72,5 @@ export const RPC_PROVIDERS: { [key in SupportedInterfaceChain]: StaticJsonRpcPro
   [ChainId.BNB]: new AppJsonRpcProvider(ChainId.BNB),
   [ChainId.AVALANCHE]: new AppJsonRpcProvider(ChainId.AVALANCHE),
   [ChainId.BASE]: new AppJsonRpcProvider(ChainId.BASE),
+  [ChainId.OONE_DEV]: new AppJsonRpcProvider(ChainId.OONE_DEV),
 }
