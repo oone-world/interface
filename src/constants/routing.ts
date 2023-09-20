@@ -1,5 +1,6 @@
 // a list of tokens by chain
-import { ChainId, Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@uniswap/sdk-core'
+import { ChainId } from 'constants/oone'
 
 import {
   ARB,

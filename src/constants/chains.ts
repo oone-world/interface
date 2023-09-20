@@ -62,6 +62,7 @@ export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
   ChainId.BNB,
   ChainId.AVALANCHE,
   ChainId.BASE,
+  ChainId.OONE_DEV,
 ] as const
 
 /**
@@ -91,6 +92,7 @@ export const L1_CHAIN_IDS = [
   ChainId.CELO_ALFAJORES,
   ChainId.BNB,
   ChainId.AVALANCHE,
+  ChainId.OONE_DEV,
 ] as const
 
 export type SupportedL1ChainId = (typeof L1_CHAIN_IDS)[number]

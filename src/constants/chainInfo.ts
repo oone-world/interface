@@ -18,7 +18,7 @@ import ms from 'ms'
 import { darkTheme } from 'theme/colors'
 
 import { SupportedL1ChainId, SupportedL2ChainId } from './chains'
-import { ARBITRUM_LIST, AVALANCHE_LIST, BASE_LIST, CELO_LIST, OPTIMISM_LIST, PLASMA_BNB_LIST } from './lists'
+import { ARBITRUM_LIST, AVALANCHE_LIST, BASE_LIST, CELO_LIST, OONE_LIST, OPTIMISM_LIST, PLASMA_BNB_LIST } from './lists'
 import { ChainId } from './oone'
 
 export const AVERAGE_L1_BLOCK_TIME = ms(`12s`)
@@ -258,6 +258,17 @@ const CHAIN_INFO: ChainInfoMap = {
     squareLogoUrl: baseSquareLogo,
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
     color: darkTheme.chain_84531,
+  },
+  [ChainId.OONE_DEV]: {
+    networkType: NetworkType.L1,
+    defaultListUrl: OONE_LIST,
+    docs: 'https://dev.oonechain.com/developers/docs/',
+    explorer: 'https://dev.oonescan.com/',
+    infoLink: 'https://dev.oonechain.com/developers/docs/',
+    label: 'OONE Chain Devnet',
+    logoUrl: 'https://dev.oonescan.com/images/logo_oone-a2945b12ecb615fb314e46f457327bf4.svg',
+    nativeCurrency: { name: 'OONE', symbol: 'OONE', decimals: 18 },
+    color: darkTheme.chain_1,
   },
 } as const
 

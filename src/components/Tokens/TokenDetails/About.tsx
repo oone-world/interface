@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
-import { ChainId } from '@uniswap/sdk-core'
 import { getChainInfo } from 'constants/chainInfo'
+import { ChainId } from 'constants/oone'
 import { darken } from 'polished'
 import { useState } from 'react'
 import styled from 'styled-components'

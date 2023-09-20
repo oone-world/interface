@@ -1,7 +1,8 @@
 import { QueryResult } from '@apollo/client'
 import * as Sentry from '@sentry/react'
-import { ChainId, Currency, Token } from '@uniswap/sdk-core'
+import { Currency, Token } from '@uniswap/sdk-core'
 import { AVERAGE_L1_BLOCK_TIME } from 'constants/chainInfo'
+import { ChainId } from 'constants/oone'
 import { NATIVE_CHAIN_ID, nativeOnChain, WRAPPED_NATIVE_CURRENCY } from 'constants/tokens'
 import ms from 'ms'
 import { useEffect } from 'react'
@@ -66,6 +67,7 @@ export const GQL_MAINNET_CHAINS = [
   Chain.Bnb,
   Chain.Avalanche,
   Chain.Base,
+  Chain.OoneDev,
 ] as const
 
 const GQL_TESTNET_CHAINS = [Chain.EthereumGoerli, Chain.EthereumSepolia] as const
@@ -88,6 +90,7 @@ export const CHAIN_ID_TO_BACKEND_NAME: { [key: number]: InterfaceGqlChain } = {
   [ChainId.BNB]: Chain.Bnb,
   [ChainId.AVALANCHE]: Chain.Avalanche,
   [ChainId.BASE]: Chain.Base,
+  [ChainId.OONE_DEV]: Chain.OoneDev,
 }
 
 export function chainIdToBackendName(chainId: number | undefined) {
@@ -154,6 +157,7 @@ const CHAIN_NAME_TO_CHAIN_ID: { [key in InterfaceGqlChain]: ChainId } = {
   [Chain.Bnb]: ChainId.BNB,
   [Chain.Avalanche]: ChainId.AVALANCHE,
   [Chain.Base]: ChainId.BASE,
+  [Chain.OoneDev]: ChainId.OONE_DEV,
 }
 
 export function isSupportedGQLChain(chain: Chain): chain is InterfaceGqlChain {

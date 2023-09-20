@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
-import { ChainId } from '@uniswap/sdk-core'
 import { MouseoverTooltip } from 'components/Tooltip'
 import { getChainInfo } from 'constants/chainInfo'
+import { ChainId } from 'constants/oone'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
 import { ExternalLink, ThemedText } from 'theme'
