@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from 'constants/oone'
 
 const BLOCK_EXPLORER_PREFIXES: { [chainId: number]: string } = {
   [ChainId.MAINNET]: 'https://etherscan.io',
@@ -13,6 +13,7 @@ const BLOCK_EXPLORER_PREFIXES: { [chainId: number]: string } = {
   [ChainId.BNB]: 'https://bscscan.com',
   [ChainId.AVALANCHE]: 'https://snowtrace.io',
   [ChainId.BASE]: 'https://basescan.org',
+  [ChainId.OONE_DEV]: 'https://dev.oonescan.com',
 }
 
 export enum ExplorerDataType {
