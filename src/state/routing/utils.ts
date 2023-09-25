@@ -1,11 +1,12 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { MixedRouteSDK } from '@uniswap/router-sdk'
 import { ChainId, Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core'
-import { AlphaRouter } from '@uniswap/smart-order-router'
+import { AlphaRouter, UniswapMulticallProvider, V3PoolProvider } from '@uniswap/smart-order-router'
 import { DutchOrderInfo, DutchOrderInfoJSON } from '@uniswap/uniswapx-sdk'
 import { Pair, Route as V2Route } from '@uniswap/v2-sdk'
 import { FeeAmount, Pool, Route as V3Route } from '@uniswap/v3-sdk'
 import { asSupportedChain } from 'constants/chains'
+import { UniswapMulticallProvider as UniswapMulticallProviderOone } from 'constants/ooneMulticallProvider'
 import { RPC_PROVIDERS } from 'constants/providers'
 import { isAvalanche, isBsc, isMatic, nativeOnChain } from 'constants/tokens'
 import { toSlippagePercent } from 'utils/slippage'
@@ -47,7 +48,14 @@ export function getRouter(chainId: ChainId): AlphaRouter {
   const supportedChainId = asSupportedChain(chainId)
   if (supportedChainId) {
     const provider = RPC_PROVIDERS[supportedChainId]
-    const router = new AlphaRouter({ chainId, provider })
+    const multicallProvider = new UniswapMulticallProviderOone(chainId, provider) as unknown as UniswapMulticallProvider
+    const v3PoolProvider = new V3PoolProvider(chainId, multicallProvider)
+    const router = new AlphaRouter({
+      chainId,
+      provider,
+      multicall2Provider: multicallProvider,
+      v3PoolProvider,
+    })
     routers.set(chainId, router)
     return router
   }
