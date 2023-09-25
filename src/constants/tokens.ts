@@ -252,6 +252,16 @@ export const DAI_AVALANCHE = new Token(
   'Dai.e Token'
 )
 
+export const USDT_OONE_DEV = new Token(
+  ChainId.OONE_DEV,
+  '0xDBf7a6B65b964bBbE517fdA0940bF90EC967a75C',
+  18,
+  'USDT',
+  'USDT'
+)
+
+export const DAI_OONE_DEV = new Token(ChainId.OONE_DEV, '0x822393b87328a3912CD13b1a5E577304cED32a69', 18, 'DAI', 'DAI')
+
 export const UNI: { [chainId: number]: Token } = {
   [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESSES[ChainId.MAINNET], 18, 'UNI', 'Uniswap'),
   [ChainId.GOERLI]: new Token(ChainId.GOERLI, UNI_ADDRESSES[ChainId.GOERLI], 18, 'UNI', 'Uniswap'),

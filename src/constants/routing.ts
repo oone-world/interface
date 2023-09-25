@@ -15,6 +15,7 @@ import {
   DAI_ARBITRUM_ONE,
   DAI_AVALANCHE,
   DAI_BSC,
+  DAI_OONE_DEV,
   DAI_OPTIMISM,
   DAI_POLYGON,
   ETH_BSC,
@@ -34,6 +35,7 @@ import {
   USDT_ARBITRUM_ONE,
   USDT_AVALANCHE,
   USDT_BSC,
+  USDT_OONE_DEV,
   USDT_OPTIMISM,
   USDT_POLYGON,
   WBTC,
@@ -116,6 +118,7 @@ export const COMMON_BASES: ChainCurrencyList = {
     USDT_AVALANCHE,
     WETH_AVALANCHE,
   ],
+  [ChainId.OONE_DEV]: [nativeOnChain(ChainId.OONE_DEV), USDT_OONE_DEV, DAI_OONE_DEV],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
